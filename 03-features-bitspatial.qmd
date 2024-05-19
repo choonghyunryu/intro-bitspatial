@@ -1,0 +1,78 @@
+# `bitSpatial 특징`
+
+## sf 패키지 기반으로 저작
+
+- sf 패키지의 기능을 활용하여 데이터와 랜더링 처리
+    - sf 패키지는 공간 벡터 데이터용 패키지로 sp 패키지 대체
+       - sf 패키지는 GDAL, PROJ, GEOS 라이브러리를 사용
+          - GDAL: reading and writing data
+          - GEOS: geometrical operations
+          - PROJ: projection conversions and datum transformations
+    - 2023년 10월 16일 rgdal 프로젝트 종료
+       - 역사의 뒤안길로 사라진 rgdal, 그리고 maptools, rgeos
+    - bitSpatial는 sp 패키지 기반으로 시작해서 sf 패키지 기반으로 전환
+    
+
+## 리아스식 해안의 이슈 해결 {.smaller}
+
+::: panel-tabset
+
+### 메모리 사용과 계산 시간의 이슈
+
+- 해안선 데이터의 복잡성으로 인한 메모리 사용과 계산 시간의 이슈
+    - bitSpatial는 단순화를 통해 메모리 사용과 계산 시간을 개선
+- 지형지물을 나타내는 데 사용되는 정보의 양을 줄이는 방법
+    - 지형지물(예: 작은 섬) 제거
+    - 지형지물 결합하거나(예: 여러 개의 겹치거나 인접한 지형지물 결합)
+    - 지형지물 복잡성 줄임(예: 호수와 같은 구멍 제거) 
+- 정보 손실이 수반됨
+    - 얼마나 단순화할지, 
+    - 이로 인해 결과에 어떤 편향성이 발생하는지 고려해야 함  
+
+
+### 랜더링 속도 개선 {.smaller}
+
+::: columns
+
+::: {.column width="50%"}
+
+- 원본 Shapefile 랜더링 속도
+
+![](img/elapse_origin.png)
+
+:::
+
+
+
+::: {.column width="50%"}
+
+- 단순화된 Shapefile 랜더링 속도
+
+![](img/elapse_simplify.png)
+:::
+
+:::
+
+### Polygon 단순화
+
+::: columns
+
+::: {.column width="50%"}
+
+- 원본 Shapefile Polygon
+
+![](img/mega_origin.png)
+
+:::
+
+::: {.column width="50%"}
+
+- 단순화된 Shapefile Polygon
+
+![](img/mega_simplify.png)
+:::
+
+:::
+
+::: 
+

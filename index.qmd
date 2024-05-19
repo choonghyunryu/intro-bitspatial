@@ -1,0 +1,46 @@
+---
+title: "공간 데이터 시각화"
+subtitle: "bitSpatial 패키지를 이용한"
+author: "유충현"
+institute: "한국R사용자회 / 디플래닉스"
+date: "2024-05-23"
+format: 
+  insper-revealjs:
+    self-contained: true
+    footer: |
+      [한국 R 사용자회](https://r2bit.com/){target="_blank"} • 슬라이드 제작 [Quarto](https://quarto.org/){target="_blank"} • 테마 [Insper](https://github.com/padsInsper/quarto-insper-theme){target="_blank"}
+date-format: long
+output-dir: docs
+filters:
+   - lightbox
+lightbox: auto
+include-in-header:
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height: 70px;
+      }
+      </style>
+---
+
+## 목차
+
+1. bitSpatial 배경
+2. bitSpatial 소개
+3. bitSpatial 특징
+4. bitSpatial 사용하기
+5. 질의 응답
+
+
+
+{{< include 01-requires-bitspatial.qmd >}}
+
+{{< include 02-intro-bitspatial.qmd >}}
+
+{{< include 03-features-bitspatial.qmd >}}
+
+{{< include 04-usage-bitspatial.qmd >}}
+
+
+# 질의 응답
